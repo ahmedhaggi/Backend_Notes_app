@@ -6,8 +6,8 @@ export const getAllNotes = async (req, res) => {
     try {
         const notes = await Notes.find()
         res.statu(200).json(notes)
-    } catch (error) {
-        res.status(500).json({ error: error.message })
+    } catch (e) {
+        res.status(500).json({ error: e.message })
     }
 }
 // Create All Notes
@@ -19,8 +19,8 @@ export const creatNotes = async (req, res) => {
         const note = await newNote.save()
         res.statu(202).json(note)
 
-    } catch (error) {
-        res.statu(500).json({ error: error.message })
+    } catch (e) {
+        res.statu(500).json({ error: e.message })
     }
 }
 
@@ -43,8 +43,8 @@ export const deleteNote = async (req, res) => {
         if (note) {
             res.status(200).json({ message: 'Note deleted successfull' })
         }
-    } catch (error) {
-        res.status(500).json({ error: error.message })
+    } catch (e) {
+        res.status(500).json({ error: e.message })
     }
 
 
