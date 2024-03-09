@@ -14,7 +14,7 @@ export const getAllNotes = async (req, res) => {
 export const creatNotes = async (req, res) => {
     try {
         const { title, descrption } = req.body
-        const newNote = new Notes({ title, descrption, date: new Date() })
+        const newNote = new Notes({ title, descrption, date: Date(date) })
 
         const note = await newNote.save()
         res.statu(202).json(note)
