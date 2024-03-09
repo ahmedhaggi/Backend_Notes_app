@@ -20,7 +20,7 @@ export const creatNotes = async (req, res) => {
         res.status(202).json(note)
 
     } catch (e) {
-        res.statu(500).json({ error: e.message })
+        res.status(500).json({ error: e.message })
     }
 }
 
