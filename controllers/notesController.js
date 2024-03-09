@@ -17,7 +17,7 @@ export const creatNotes = async (req, res) => {
         const newNote = new Notes({ title, descrption, date: Date(date) })
 
         const note = await newNote.save()
-        res.statu(202).json(note)
+        res.status(202).json(note)
 
     } catch (e) {
         res.statu(500).json({ error: e.message })
@@ -31,7 +31,7 @@ export const updateNote = async (req, res) => {
 
     if (note) {
         note.ttile = title
-        note.descrption = descrption
+        note.descrption = descrptiont
         const updateNote = await note.save();
         res.status(200).json(updateNote)
     }
